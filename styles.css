@@ -1,0 +1,19 @@
+/* Add border to the table */
+#geojsonTable {
+    border-collapse: collapse;
+    width: 100%;
+    display: none;
+  }
+  
+  /* Add borders to table cells */
+  #geojsonTable th,
+  #geojsonTable td {
+    border: 1px solid #dddddd;
+    padding: 8px;
+    text-align: center; /* Center-align table cell content */
+  }
+  
+  /* Add background color to header row */
+  #geojsonTable th {
+    background-color: #f2f2f2;
+  }
