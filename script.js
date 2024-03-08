@@ -1,6 +1,7 @@
-const modifiedFeatures = [];
+let modifiedFeatures = [];
 // Function to handle file input change
 function handleFileInputChange(event) {
+    modifiedFeatures = []
     const file = event.target.files[0];
     if (!file) return;
   
