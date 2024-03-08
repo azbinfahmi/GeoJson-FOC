@@ -12,7 +12,7 @@ function handleFileInputChange(event) {
       
       const geojsonTable = document.getElementById('geojsonTable');
       geojsonTable.querySelector('tbody').innerHTML = '';
-
+      const modifiedFeatures = [];
       // Process each feature
       let index = 0
       let valueBefore, valueAfter
@@ -61,14 +61,29 @@ function handleFileInputChange(event) {
         // Append the new row to the table
         geojsonTable.querySelector('tbody').appendChild(newRow);        
         index += 1
+        const modifiedFeature = { ...feature, properties: { ...feature.properties} };
+        modifiedFeatures.push(modifiedFeature);
       });
       // Display the table if it has rows
       geojsonTable.style.display = geojsonTable.querySelector('tbody').children.length > 0 ? 'block' : 'none';
+      downloadGeoJSON(modifiedFeatures);
       console.log(geojson);
     };
     reader.readAsText(file);
-  }
+}
   
+// Function to download GeoJSON file
+function downloadGeoJSON(data) {
+  const json = JSON.stringify({ type: "FeatureCollection", features: data });
+  const blob = new Blob([json], { type: "application/json" });
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  const fileName = prompt("Enter a file name:", "modified_geojson.json");
+  if (fileName) {
+    a.download = fileName;
+    a.click();
+  }
+}
   // Add event listener for file input change
   document.getElementById('fileInput').addEventListener('change', handleFileInputChange);
   
