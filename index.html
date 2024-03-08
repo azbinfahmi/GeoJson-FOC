@@ -8,20 +8,27 @@
 </head>
 <body>
   <input type="file" id="fileInput" accept=".geojson">
+  <button id="downloadButton">Download GeoJSON</button>
   <br><br>
-  <table id="geojsonTable">
-    <thead>
-      <tr>
-        <th>Feature Number</th>
-        <th>Value Before</th>
-        <th>Value After</th>
-      </tr>
-    </thead>
-    <tbody>
-      <!-- Table content will be dynamically generated -->
-    </tbody>
-  </table>
-
+  <div class="center-container"> 
+    <div class="table-container">
+      <table id="geojsonTable">
+        <thead>
+          <tr>
+            <th>Feature Number</th>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Name2</th>
+            <th>Name3</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Table content will be dynamically generated -->
+        </tbody>
+      </table>
+    </div>
+  </div>
   <script src="script.js"></script>
+
 </body>
 </html>

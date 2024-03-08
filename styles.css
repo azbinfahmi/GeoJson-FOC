@@ -1,15 +1,32 @@
+html{
+  background-color:darkgray
+}
+
+.center-container {
+  display: flex;
+  justify-content: center; 
+  /* align-items: center;  */
+  height: 90vh;
+  overflow-y: auto;
+}
+
+/* Table container */
+.table-container {
+  /* width: 80%; */
+}
+
 /* Add border to the table */
 #geojsonTable {
     border-collapse: collapse;
-    width: 100%;
+    background-color: #dddddd;
     display: none;
   }
   
   /* Add borders to table cells */
   #geojsonTable th,
   #geojsonTable td {
-    border: 1px solid #dddddd;
-    padding: 8px;
+    border: 1px solid black;
+        padding: 8px;
     text-align: center; /* Center-align table cell content */
   }
   
