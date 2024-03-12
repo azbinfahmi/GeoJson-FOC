@@ -20,21 +20,21 @@ function handleFileInputChange(event) {
       if (feature.properties.Name && focPattern.test(feature.properties.Name)) {
         const matches = feature.properties.Name.match(focPattern);
         feature.properties.Name2 = matches[0]
-        feature.properties.Name3 = frontName + '= ' + feature.properties.Name
+        feature.properties.Name3 = frontName + '=' + feature.properties.Name
       }
       else if (feature.properties.ID && focPattern.test(feature.properties.ID)) {
         const matches = feature.properties.ID.match(focPattern);
         feature.properties.Name2 = matches[0]
-        feature.properties.Name3 = frontName + '= ' + feature.properties.ID
+        feature.properties.Name3 = frontName + '=' + feature.properties.ID
       }
       else{
         if(feature.properties.Name != undefined){
           feature.properties.Name2 = feature.properties.Name
-          feature.properties.Name3 = frontName + '= ' + feature.properties.Name
+          feature.properties.Name3 = frontName + '=' + feature.properties.Name
         }
         else if(feature.properties.ID != undefined){
           feature.properties.Name2 = feature.properties.ID
-          feature.properties.Name3 = frontName + '= ' + feature.properties.ID
+          feature.properties.Name3 = frontName + '=' + feature.properties.ID
         }
         else{
           feature.properties.Name2 = ''
